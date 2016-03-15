@@ -1,1 +1,22 @@
-[]
+"teams":[
+{"name":"Leicester City", "icon":"", "netWorth":"133", "goalDif":"pos"}
+{"name":"Tottenham", "icon":"", "netWorth":"710", "goalDif":"pos"}
+{"name":"Arsenal", "icon":"", "netWorth":"1118", "goalDif":"pos"}
+{"name":"Manchester City", "icon":"", "netWorth":"907", "goalDif":"pos"}
+{"name":"West Ham United", "icon":"", "netWorth":"215", "goalDif":"pos"}
+{"name":"Manchester United", "icon":"", "netWorth":"1848", "goalDif":"pos"}
+{"name":"Southampton", "icon":"", "netWorth":"259", "goalDif":"pos"}
+{"name":"Liverpool", "icon":"", "netWorth":"537", "goalDif":"pos"}
+{"name":"Stoke City", "icon":"", "netWorth":"192", "goalDif":"neg"}
+{"name":"Chelsea", "icon":"", "netWorth":"826", "goalDif":"pos"}
+{"name":"West Bromwich Abion", "icon":"", "netWorth":"175", "goalDif":"neg"}
+{"name":"Everton", "icon":"", "netWorth":"216", "goalDif":"pos"}
+{"name":"Bournemouth", "icon":"", "netWorth":"104", "goalDif":"neg"}
+{"name":"Watford", "icon":"", "netWorth":"133", "goalDif":"neg"}
+{"name":"Crystal Palace", "icon":"", "netWorth":"186", "goalDif":"neg"}
+{"name":"Swansea City", "icon":"", "netWorth":"183", "goalDif":"neg"}
+{"name":"Sunderland", "icon":"", "netWorth":"121", "goalDif":"neg"}
+{"name":"Norwich City", "icon":"", "netWorth":"166", "goalDif":"neg"}
+{"name":"Newcastle United", "icon":"", "netWorth":"221", "goalDif":"neg"}
+{"name":"Aston Villa", "icon":"", "netWorth":"165", "goalDif":"neg"}
+]

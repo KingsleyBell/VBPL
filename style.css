@@ -15,12 +15,14 @@ body {
 .full-height {
 	height: 100%;
 }
-.field {
-  background-image: url("images/dullfield.png");
+.cover {  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.field {
+  background-image: url("images/dullfield.png");
 }
 .y-value {
 	width: 100%;

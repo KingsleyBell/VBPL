@@ -29,13 +29,25 @@ body {
 	text-align: right;
 	height: 20%
 }
-.circle {
-    width: 50px;
-    height: 50px;
+.circle {    
     position: relative;
     overflow: hidden;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    border: 2px solid #012060;    
+}
+.normal {  
+  width: 80%;
+  
+  border: 2px solid #012060; 
+}
+.halo-blue{
+  width: 60px;
+  height: 60px;  
+  border: 5px solid blue;
+}
+.halo-red{
+  width: 60px;
+  height: 60px;  
+  border: 5px solid red;
 }

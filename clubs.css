@@ -13,6 +13,9 @@
 .bolton-wanderers {
 	background-image: url("images/clubs/Bolton_Wanderers.ico");
 }
+.bournemouth {
+	background-image: url("images/clubs/Bournemouth.ico");
+}
 .burnley-fc {
 	background-image: url("images/clubs/Burnley_FC.ico");
 }
@@ -27,6 +30,9 @@
 }
 .coventry-city {
 	background-image: url("images/clubs/Coventry_City.ico");
+}
+.crystal-palace {
+	background-image: url("images/clubs/Crystal_Palace.ico");
 }
 .darby-county {
 	background-image: url("images/clubs/Darby_County.ico");
@@ -58,7 +64,7 @@
 .leicester-city {
 	background-image: url("images/clubs/Leicester_City.ico");
 }
-.liverpool-fc {
+.liverpool {
 	background-image: url("images/clubs/Liverpool_FC.ico");
 }
 .manchester-city {
@@ -100,8 +106,8 @@
 .sheffield-wendesday {
 	background-image: url("images/clubs/Sheffield_Wendesday.ico");
 }
-.southampton-fc {
-	background-image: url("images/clubs/Shouthampton_FC.ico");
+.southampton {
+	background-image: url("images/clubs/Southampton_FC.ico");
 }
 .stoke-city {
 	background-image: url("images/clubs/Stoke_City.ico");
@@ -115,7 +121,7 @@
 .tottenham-hotspur {
 	background-image: url("images/clubs/Tottenham_Hotspur.ico");
 }
-.watford-fc {
+.watford {
 	background-image: url("images/clubs/Watford_FC.ico");
 }
 .west-bromwich-albion {

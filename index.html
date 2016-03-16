@@ -32,30 +32,42 @@
     <div class="container-fluid no-padding">
       <div class="row blue-back">      
         <center>
-          <h1>VBPL <br /><small>BARCLAYS PREMIER LEAGUE VISUALISATION</small></h1>          
+          <h1>VBPL</h1>          
         </center>
-      </div>      
+      </div>         
+      <div class="row grey-back">
+        <div class="col-sm-4 blue-back" style="height: 39px;"></div>      
+        <div class="col-sm-56">      
+          <center>
+            <h1 style="margin: 0%;"><small>BARCLAYS PREMIER LEAGUE VISUALISATION</small></h1>          
+          </center>
+        </div>
+      </div>   
     </div>
     <!-- End of Header -->
 
     <!-- Top Teams -->
     <div class="container-fluid no-padding">
-      <div class="row">        
-        <div class="col-sm-12 top-five">
-          1.
+      <div class="row blue-back"> 
+        <div class="col-sm-4 blue-back"></div>       
+        <div class="col-sm-50 no-padding">
+          <div class="col-sm-12 top-five">
+            1.
+          </div>
+          <div class="col-sm-12 top-five">
+            2.
+          </div>
+          <div class="col-sm-12 top-five">
+            3.
+          </div>
+          <div class="col-sm-12 top-five">
+            4.
+          </div>
+          <div class="col-sm-12 top-five">
+            5.
+          </div>          
         </div>
-        <div class="col-sm-12 top-five">
-          2.
-        </div>
-        <div class="col-sm-12 top-five">
-          3.
-        </div>
-        <div class="col-sm-12 top-five">
-          4.
-        </div>
-        <div class="col-sm-12 top-five">
-          5.
-        </div> 
+        <div class="col-sm-6 grey-back" style="height: 20px;"></div>
       </div>           
     </div>
     <!-- End of Top Teams -->
@@ -140,7 +152,7 @@
         </div>
         <!-- End of Data Section -->
 
-        <div class="col-sm-6 no-padding blue-back" style="height: 500px;"></div>
+        <div class="col-sm-6 no-padding   grey-back" style="height: 500px;"></div>
       </div>
       <!-- End of Y-axis and data section -->        
 
@@ -212,13 +224,17 @@
             <center>20</center>
           </div> 
         </div>  
-        <!-- End of X-Axis Points-->          
+        <!-- End of X-Axis Points-->   
+
+        <div class="col-sm-6 no-padding grey-back" style="height: 60%;"></div>
 
         <!-- X-Axis Label -->
-        <div class="col-sm-60 no-padding" style="height: 40%;">
+        <div class="col-sm-54 no-padding" style="height: 40%;">
           <center>Log Position</center>
         </div>
-        <!-- End of X-Axis Label -->          
+        <div class="col-sm-6 no-padding grey-back" style="height: 40%;"></div>
+        <!-- End of X-Axis Label -->
+
       </div>      
       <!-- End of X-Axis -->
 
@@ -228,15 +244,45 @@
     <!-- Compare Teams -->
     <div class="container-fluid no-padding" style="height: 200px;">
       <div class="row full-height">
-        <!-- Team 1 -->
-        <div class="col-sm-30 no-padding border-full full-height" style="padding-left: 30px; color: black">
-          team 1
+        <!-- Team 1 -->        
+        <div class="col-sm-30 team-box" style="padding-left: 30px;">
+          <div class="team-box" style="border: 1px solid white;">
+            <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Manchester United</b></div>
+            <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
+              <div class="circle big cover manchester-united"></div>
+            </div>
+            <div class="col-sm-50" style="padding: 15px; height: 75%">
+              <div class="col-sm-20 team-small-box">
+                Won:<br /> Lost:<br /> Drew:
+              </div>
+              <div class="col-sm-10" id="small-box-values"></div>
+              <div class="col-sm-20 team-small-box">
+                Goals for:<br /> Goals against:<br /> Goal Difference:
+              </div>
+              <div class="col-sm-10" id="small-box-values"></div>
+            </div>
+          </div>
         </div>
         <!-- End of Team 1 -->
 
-        <!-- Team 2 -->
-        <div class="col-sm-30 no-padding border-full full-height" style="color: black">
-          team 2
+        <!-- Team 2 -->        
+        <div class="col-sm-30 team-box" style="padding-left: 30px;">
+          <div class="team-box" style="border: 1px solid white;">
+            <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Arsenal</b></div>
+            <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
+              <div class="circle big cover arsenal"></div>
+            </div>
+            <div class="col-sm-50" style="padding: 15px; height: 75%">
+              <div class="col-sm-20 team-small-box">
+                Won:<br /> Lost:<br /> Drew:
+              </div>
+              <div class="col-sm-10" id="small-box-values"></div>
+              <div class="col-sm-20 team-small-box">
+                Goals for:<br /> Goals against:<br /> Goal Difference:
+              </div>
+              <div class="col-sm-10" id="small-box-values"></div>
+            </div>
+          </div>
         </div>
         <!-- End of Team 2 -->
 

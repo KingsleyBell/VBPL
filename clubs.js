@@ -23,6 +23,7 @@ var clubData2016 = [
 
 function addClubs() {
 	for (var i = 0; i < clubData2016.length; i++) {
+		var height = (1 - (clubData2016[i].netWorth/2000))*100;
 		var haloColor;
 		if (clubData2016[i].goalDif == "pos") {
 			haloColor = "halo-blue";
@@ -30,6 +31,11 @@ function addClubs() {
 			haloColor = "halo-red";
 		}
 		
+		d3.select("body")
+		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
+		.append("div")
+		.attr("style", "width: 100%; height: " + height + "%;");
+
 		d3.select("body")
 		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
 		.append("center")

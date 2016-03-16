@@ -1,24 +1,24 @@
 var clubData2016 = [
-{"name":"Leicester City", "netWorth":"133", "goalDif":"pos"},
-{"name":"Tottenham Hotspur", "netWorth":"710", "goalDif":"pos"},
-{"name":"Arsenal", "netWorth":"1118", "goalDif":"pos"},
-{"name":"Manchester City", "netWorth":"907", "goalDif":"pos"},
-{"name":"West Ham United", "netWorth":"215", "goalDif":"pos"},
-{"name":"Manchester United", "netWorth":"1848", "goalDif":"pos"},
-{"name":"Southampton", "netWorth":"259", "goalDif":"pos"},
-{"name":"Liverpool", "netWorth":"537", "goalDif":"pos"},
-{"name":"Stoke City", "netWorth":"192", "goalDif":"neg"},
-{"name":"Chelsea", "netWorth":"826", "goalDif":"pos"},
-{"name":"West Bromwich Albion", "netWorth":"175", "goalDif":"neg"},
-{"name":"Everton", "netWorth":"216", "goalDif":"pos"},
-{"name":"Bournemouth", "netWorth":"104", "goalDif":"neg"},
-{"name":"Watford", "netWorth":"133", "goalDif":"neg"},
-{"name":"Crystal Palace", "netWorth":"186", "goalDif":"neg"},
-{"name":"Swansea City", "netWorth":"183", "goalDif":"neg"},
-{"name":"Sunderland", "netWorth":"121", "goalDif":"neg"},
-{"name":"Norwich City", "netWorth":"166", "goalDif":"neg"},
-{"name":"Newcastle United", "netWorth":"221", "goalDif":"neg"},
-{"name":"Aston Villa", "netWorth":"165", "goalDif":"neg"}
+{"name":"Leicester City", "netWorth":"133", "goalDif":22},
+{"name":"Tottenham Hotspur", "netWorth":"710", "goalDif":29},
+{"name":"Arsenal", "netWorth":"1118", "goalDif":16},
+{"name":"Manchester City", "netWorth":"907", "goalDif":21},
+{"name":"West Ham United", "netWorth":"215", "goalDif":12},
+{"name":"Manchester United", "netWorth":"1848", "goalDif":10},
+{"name":"Southampton", "netWorth":"259", "goalDif":8},
+{"name":"Liverpool", "netWorth":"537", "goalDif":6},
+{"name":"Stoke City", "netWorth":"192", "goalDif":-4},
+{"name":"Chelsea", "netWorth":"826", "goalDif":4},
+{"name":"West Bromwich Albion", "netWorth":"175", "goalDif":-6},
+{"name":"Everton", "netWorth":"216", "goalDif":12},
+{"name":"Bournemouth", "netWorth":"104", "goalDif":-9},
+{"name":"Watford", "netWorth":"133", "goalDif":-1},
+{"name":"Crystal Palace", "netWorth":"186", "goalDif":-7},
+{"name":"Swansea City", "netWorth":"183", "goalDif":-10},
+{"name":"Sunderland", "netWorth":"121", "goalDif":-19},
+{"name":"Norwich City", "netWorth":"166", "goalDif":-23},
+{"name":"Newcastle United", "netWorth":"221", "goalDif":-26},
+{"name":"Aston Villa", "netWorth":"165", "goalDif":-35}
 ]
 
 function addClubs() {
@@ -34,10 +34,12 @@ function addClubs() {
 	for (var i = 0; i < clubData2016.length; i++) {
 		var height = (1 - (clubData2016[i].netWorth/2000))*100;
 		var haloColor;
-		if (clubData2016[i].goalDif == "pos") {
+		if (clubData2016[i].goalDif > 0) {
 			haloColor = "halo-blue";
-		} else if (clubData2016[i].goalDif == "neg") {
+		} else if (clubData2016[i].goalDif < 0) {
 			haloColor = "halo-red";
+		} else {
+			// Handle zero goal difference here
 		}
 		
 		d3.select("body")

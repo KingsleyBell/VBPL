@@ -51,7 +51,7 @@ body {
   height: 4vw;  
   border: 5px solid rgba(0,255,0,0.5);
   top: 0%;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
 }
 .halo-red{
   width: 4vw;
@@ -60,7 +60,7 @@ body {
   top: 0%;
   transform: translateY(-100%);
 }
-.halo-whitw{
+.halo-white{
   width: 4vw;
   height: 4vw;  
   border: 5px solid rgba(255,255,255,0.5);

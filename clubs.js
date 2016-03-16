@@ -34,7 +34,10 @@ function addClubs() {
 
 
 	for (var i = 0; i < clubData2016.length; i++) {
-		var height = (1 - (clubData2016[i].netWorth/2500))*100;
+		var netWorthHeight = (1 - (clubData2016[i].netWorth/2500))*100;
+		var winHeight = clubData2016[i].w*5 + 5;
+		var drawHeight = clubData2016[i].d*5;
+		var lossHeight = clubData2016[i].l*5 + 5;
 		var haloColor;
 		if (clubData2016[i].gd > 0) {
 			haloColor = "halo-green";
@@ -44,10 +47,25 @@ function addClubs() {
 			haloColor = "halo-white";
 		}
 		
-		d3.select("body")
-		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
-		.append("div")
-		.attr("style", "width: 100%; height: " + height + "%;");
+		var div = d3.select("body")
+					.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
+					.append("div")
+					.attr("style", "width: 100%; height: " + netWorthHeight + "%; position: relative;")
+
+		//Append wins bar
+		div.append("div")
+		.attr("class","no-padding")	
+		.attr("style", "width: 10%; height: " + winHeight + "px; background-color: rgba(0,127,255,0.5); position: absolute; left: 20%; bottom: 52px;");
+
+		//Append draws bar
+		div.append("div")		
+		.attr("class","no-padding")	
+		.attr("style", "width: 10%; height: " + drawHeight + "px; background-color: rgba(255,255,255,0.5); position: absolute; left: 45%; bottom: 57px;");
+
+		//Append losses bar
+		div.append("div")		
+		.attr("class","no-padding")	
+		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.5); position: absolute; left: 70%; bottom: 52px;");
 
 		d3.select("body")
 		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")

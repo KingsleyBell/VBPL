@@ -32,14 +32,15 @@ function addClubs() {
 
 
 	for (var i = 0; i < clubData2016.length; i++) {
-		var height = (1 - (clubData2016[i].netWorth/2000))*100;
+		var height = (1 - (clubData2016[i].netWorth/2500))*100;
 		var haloColor;
 		if (clubData2016[i].goalDif > 0) {
-			haloColor = "halo-blue";
+			haloColor = "halo-green";
 		} else if (clubData2016[i].goalDif < 0) {
 			haloColor = "halo-red";
 		} else {
 			// Handle zero goal difference here
+			haloColor = "halo-white";
 		}
 		
 		d3.select("body")

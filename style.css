@@ -45,10 +45,10 @@ body {
   height: 3.3vw;
   border: 2px solid #012060; 
 }
-.halo-blue{
+.halo-green{
   width: 4vw;
   height: 4vw;  
-  border: 5px solid rgba(0,0,255,0.5);
+  border: 5px solid rgba(0,255,0,0.5);
   top: 0%;
   transform: translateY(-50%);
 }
@@ -57,5 +57,12 @@ body {
   height: 4vw;  
   border: 5px solid rgba(255,0,0,0.5);
   top: 0%;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
+}
+.halo-whitw{
+  width: 4vw;
+  height: 4vw;  
+  border: 5px solid rgba(255,255,255,0.5);
+  top: 0%;
+  transform: translateY(-100%);
 }

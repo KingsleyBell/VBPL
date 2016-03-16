@@ -22,6 +22,15 @@ var clubData2016 = [
 ]
 
 function addClubs() {
+	for (var i = 0; i < 5; i++) {
+		d3.select("body")
+		.select("div.col-sm-12.top-five:nth-child(" + (i + 1) + ")")
+		.append("text")
+		.attr("style", "color: black;")
+		.text(clubData2016[i].name);
+	}	
+
+
 	for (var i = 0; i < clubData2016.length; i++) {
 		var height = (1 - (clubData2016[i].netWorth/2000))*100;
 		var haloColor;

@@ -15,6 +15,10 @@ body {
 .full-height {
 	height: 100%;
 }
+.top-five {
+  text-align: center;
+  color: red;
+}
 .cover {  
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -34,20 +38,24 @@ body {
     overflow: hidden;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
+    -ms-border-radius: 50%;          
 }
 .normal {  
-  width: 3.5vw;
-  height: 3.5vw;
+  width: 3.3vw;
+  height: 3.3vw;
   border: 2px solid #012060; 
 }
 .halo-blue{
-  width: 4.2vw;
-  height: 4.2vw;  
+  width: 4vw;
+  height: 4vw;  
   border: 5px solid rgba(0,0,255,0.5);
+  top: 0%;
+  transform: translateY(-50%);
 }
 .halo-red{
-  width: 4.2vw;
-  height: 4.2vw;  
+  width: 4vw;
+  height: 4vw;  
   border: 5px solid rgba(255,0,0,0.5);
+  top: 0%;
+  transform: translateY(-50%);
 }

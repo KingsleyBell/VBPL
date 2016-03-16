@@ -35,9 +35,9 @@ function addClubs() {
 
 	for (var i = 0; i < clubData2016.length; i++) {
 		var netWorthHeight = (1 - (clubData2016[i].netWorth/2500))*100;
-		var winHeight = clubData2016[i].w*5 + 5;
+		var winHeight = clubData2016[i].w*5 + 8;
 		var drawHeight = clubData2016[i].d*5;
-		var lossHeight = clubData2016[i].l*5 + 5;
+		var lossHeight = clubData2016[i].l*5 + 8;
 		var haloColor;
 		if (clubData2016[i].gd > 0) {
 			haloColor = "halo-green";
@@ -55,17 +55,17 @@ function addClubs() {
 		//Append wins bar
 		div.append("div")
 		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + winHeight + "px; background-color: rgba(0,127,255,0.5); position: absolute; left: 20%; bottom: 52px;");
+		.attr("style", "width: 10%; height: " + winHeight + "px; background-color: rgba(0,127,255,0.5); position: absolute; left: 20%; bottom: 50px;");
 
 		//Append draws bar
 		div.append("div")		
 		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + drawHeight + "px; background-color: rgba(255,255,255,0.5); position: absolute; left: 45%; bottom: 57px;");
+		.attr("style", "width: 10%; height: " + drawHeight + "px; background-color: rgba(255,255,255,0.5); position: absolute; left: 45%; bottom: 58px;");
 
 		//Append losses bar
 		div.append("div")		
 		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.5); position: absolute; left: 70%; bottom: 52px;");
+		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.5); position: absolute; left: 70%; bottom: 50px;");
 
 		d3.select("body")
 		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")

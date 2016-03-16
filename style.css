@@ -42,27 +42,27 @@ body {
     -ms-border-radius: 50%;          
 }
 .normal {  
-  width: 3.3vw;
-  height: 3.3vw;
+  width: 50px;
+  height: 50px;
   border: 2px solid #012060; 
 }
 .halo-green{
-  width: 4vw;
-  height: 4vw;  
+  width: 60px;
+  height: 60px;  
   border: 5px solid rgba(0,255,0,0.5);
   top: 0%;
   transform: translateY(-100%);
 }
 .halo-red{
-  width: 4vw;
-  height: 4vw;  
+  width: 60px;
+  height: 60px;  
   border: 5px solid rgba(255,0,0,0.5);
   top: 0%;
   transform: translateY(-100%);
 }
 .halo-white{
-  width: 4vw;
-  height: 4vw;  
+  width: 60px;
+  height: 60px;  
   border: 5px solid rgba(255,255,255,0.5);
   top: 0%;
   transform: translateY(-100%);

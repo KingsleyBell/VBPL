@@ -2,6 +2,7 @@ body {
 	font-family: "Helvetica", Helvetica, sans-serif;
     margin-right: 0px;
     color: white;
+    overflow-x: hidden
 }
 .blue-back {
 	background-color: #012060;

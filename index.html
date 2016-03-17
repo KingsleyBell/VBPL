@@ -245,11 +245,20 @@
 
     <!-- Scroll bar -->
     <div class="container-fluid no-padding">
-      <div class="row" style="height: 20px;">        
-        <div class="col-sm-60 no-padding full-height" id="scrollbar">
+      <div class="row" style="height: 55px;"> 
+        <div class="col-sm-5 no-padding full-height" style="color: black;">
           <img src="images/arrow-left.png"style="height: 100%; position: absolute; left: 20px;"></img>
+          <text style="position: absolute; right: 10px;">1995</text>
+        </div>
+        <div class="col-sm-50 no-padding full-height">                    
+          <center>
+            <input type="range" min="1995" max="2016" value="2016" step="1" name="year " id="scrollbar" value="10">
+          </center>                    
+        </div>
+        <div class="col-sm-5 no-padding full-height" style="color: black;">
+          <text style="position: absolute; left: 10px;">2016</text>
           <img src="images/arrow-right.png"style="height: 100%; position: absolute; right: 20px;"></img>
-        </div>        
+        </div>       
       </div>
     </div>
     <!-- End of scroll bar -->

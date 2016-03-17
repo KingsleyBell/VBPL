@@ -37,11 +37,12 @@
       </div>         
       <div class="row grey-back">
         <div class="col-sm-4 blue-back" style="height: 39px;"></div>      
-        <div class="col-sm-56">      
+        <div class="col-sm-55">      
           <center>
             <h1 style="margin: 0%;"><small>BARCLAYS PREMIER LEAGUE VISUALISATION</small></h1>          
           </center>
         </div>
+        <div class="col-sm-1 no-padding blue-back" style="height: 39px;"></div>
       </div>   
     </div>
     <!-- End of Header -->
@@ -67,7 +68,7 @@
             5.
           </div>          
         </div>
-        <div class="col-sm-1 no-padding grey-back" style="height: 20px;"></div>
+        <div class="col-sm-1 no-padding blue-back" style="height: 20px;"></div>
       </div>           
     </div>
     <!-- End of Top Teams -->
@@ -108,7 +109,7 @@
         <!-- End of Y-Axis -->
 
         <!-- Data -->
-        <div class="col-sm-55 no-padding cover field full-height" style="height: 500px;">          
+        <div class="col-sm-55 no-padding cover field full-height" style="height: 500px; border-left: 3px solid #404040; border-bottom: 3px solid #404040; border-right: 3px solid #404040;">          
           <div class="col-sm-3 full-height no-padding">
           </div>
           <div class="col-sm-3 full-height no-padding">
@@ -152,7 +153,7 @@
         </div>
         <!-- End of Data Section -->
 
-        <div class="col-sm-1 no-padding   grey-back" style="height: 500px;"></div>
+        <div class="col-sm-1 no-padding   blue-back" style="height: 500px;"></div>
       </div>
       <!-- End of Y-axis and data section -->        
 
@@ -226,14 +227,14 @@
         </div>  
         <!-- End of X-Axis Points-->   
 
-        <div class="col-sm-1 no-padding grey-back" style="height: 60%;"></div>
+        <div class="col-sm-1 no-padding blue-back" style="height: 60%;"></div>
 
         <!-- X-Axis Label -->
         <div class="col-sm-4 blue-back"></div>
         <div class="col-sm-55 no-padding" style="height: 40%;">
           <center>Log Position</center>
         </div>
-        <div class="col-sm-1 no-padding grey-back" style="height: 40%;"></div>
+        <div class="col-sm-1 no-padding blue-back" style="height: 40%;"></div>
         <!-- End of X-Axis Label -->
 
       </div>      
@@ -245,10 +246,10 @@
     <!-- Scroll bar -->
     <div class="container-fluid no-padding">
       <div class="row" style="height: 20px;">        
-        <div class="col-sm-59 no-padding full-height">
-          <center style="color: black;">scroll bar area</center>
-        </div>
-        <div class="col-sm-1 full-height no-padding grey-back"></div>
+        <div class="col-sm-60 no-padding full-height" id="scrollbar">
+          <img src="images/arrow-left.png"style="height: 100%; position: absolute; left: 20px;"></img>
+          <img src="images/arrow-right.png"style="height: 100%; position: absolute; right: 20px;"></img>
+        </div>        
       </div>
     </div>
     <!-- End of scroll bar -->
@@ -258,7 +259,7 @@
       <div class="row full-height">
         <!-- Team 1 -->        
         <div class="col-sm-30 team-box" style="padding-left: 30px;">
-          <div class="team-box" style="border: 1px solid white;">
+          <div class="team-box" style="background-color: #404040;">
             <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Manchester United</b></div>
             <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
               <div class="circle big cover manchester-united"></div>
@@ -278,8 +279,8 @@
         <!-- End of Team 1 -->
 
         <!-- Team 2 -->        
-        <div class="col-sm-30 team-box" style="padding-left: 30px;">
-          <div class="team-box" style="border: 1px solid white;">
+        <div class="col-sm-30 team-box" style="padding-right: 30px;">
+          <div class="team-box" style="background-color: #404040;">
             <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Arsenal</b></div>
             <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
               <div class="circle big cover arsenal"></div>

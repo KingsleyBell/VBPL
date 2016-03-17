@@ -75,4 +75,6 @@ function addClubs() {
 		.append("div")
 		.attr("class", "circle normal cover " + clubData2016[i].name.toLowerCase().replace(/ /g, "-"));
 	}
+
+	var scrollbar = d3.select("body").select("#scrollbar");
 }

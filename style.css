@@ -31,12 +31,15 @@ body {
   background-size: cover;
 }
 .field {
-  background-image: url("images/dullfield.png");
+  background-image: url("images/green.png");
+  background-size: 100% 100%;
+  transform: translateY(1px);
 }
 .y-value {
 	width: 100%;
 	text-align: right;
-	height: 20%
+	height: 20%;
+  border-top: 2px dotted white;
 }
 .circle {    
     position: relative;
@@ -44,6 +47,11 @@ body {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;          
+}
+div[class^='halo'],div[class*=' halo']:hover{ 
+  -moz-box-shadow: 0 0 10px #ccc; 
+  -webkit-box-shadow: 0 0 10px #ccc; 
+  box-shadow: 0 0 10px #ccc;
 }
 .normal {  
   width: 50px;

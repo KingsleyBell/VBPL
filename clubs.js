@@ -68,15 +68,42 @@ function addClubs() {
 		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;");
 
 		d3.select("body")
-		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
+		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")		
 		.append("center")
+		.append("div")		
+		.attr("class", "circle " + haloColor)		
 		.append("div")
-		.attr("class", "circle " + haloColor)
-		.append("div")
-		.attr("id", clubData2016[i].name)
+		.attr("id", "team-" + clubData2016[i].name)
 		.attr("class", "circle normal cover")
-		.attr("style","background-image: url(\"images/clubs/" + clubData2016[i].name.replace(/ /g, "_") + ".ico\");");		
+		.attr("style","background-image: url(\"images/clubs/" + clubData2016[i].name.replace(/ /g, "_") + ".ico\");");			
 	}
 
 	var scrollbar = d3.select("body").select("#scrollbar");
+}
+
+$(document).ready(function(){	
+
+	$("#field").on("mouseenter", "[id^=team-]", function(){
+		var team = $(this).prop("id").substring(5);
+		var netWorth = getTeamByName(team)[0].netWorth;
+       	$('body').append("<div id='teamTooltip' style=\"position:absolute;\"></div>");
+	    $('#teamTooltip').html(netWorth);
+	    $('#teamTooltip').css({
+	        "top" : $(this).offset().top + 50,
+	        "left" : $(this).offset().left + 50
+	    });
+    });
+
+    $("#field").on("mouseleave", "[id^=team-]", function(){
+    	$('#teamTooltip').remove();
+    });
+	
+	
+
+});
+
+function getTeamByName(teamName) {
+  return clubData2016.filter(
+      function(clubData2016){return clubData2016.name == teamName}
+  );
 }

@@ -18,8 +18,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">    
     <link rel="stylesheet" type="text/css" href="clubs.css">   
 
-    <!-- JQueary CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- JQueary -->
+    <script src="jquery-1.12.2.min"></script>
 
   	<!-- JavaScript files -->
   	<script type="text/javascript" src="d3.min.js" charset="utf-8"></script>
@@ -266,55 +266,17 @@
     <div class="container-fluid no-padding" style="height: 200px;">
       <div class="row full-height">
         <!-- Team 1 -->        
-        <div class="col-sm-30 team-box" style="padding-left: 30px;">
-          <div class="team-box" style="background-color: #404040;">
-            <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Manchester United</b></div>
-            <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
-              <div class="circle big cover manchester-united"></div>
-            </div>
-            <div class="col-sm-50" style="height: 75%">
-              <div class="col-sm-20 team-small-box">
-                Won:<br /> Lost:<br /> Drew:
-              </div>
-              <div class="col-sm-10 full-height team-smaller-box" id="small-box-values">
-                10 <img src="images/tick.png" style="height: 25%"></img>
-                <br />
-                5 <img src="images/tick.png" style="height: 25%"></img>
-                <br />
-                3
-              </div>
-              <div class="col-sm-20 team-small-box">
-                Goals for:<br /> Goals against:<br /> Goal Difference:
-              </div>
-              <div class="col-sm-10 full-height team-smaller-box" id="small-box-values-2">
-                10<br />5<br />+5
-              </div>
-            </div>
+        <div id="team1" class="col-sm-30 team-box" style="padding-left: 30px;">
+          <div class="compare-default">
+            Select a team to compare
           </div>
         </div>
         <!-- End of Team 1 -->
 
         <!-- Team 2 -->        
-        <div class="col-sm-30 team-box" style="padding-right: 30px;">
-          <div class="team-box" style="background-color: #404040;">
-            <div class="col-sm-60 no-padding"><b style="font-size: 2em;">Arsenal</b></div>
-            <div class="col-sm-10 no-padding" style="display: flex; align-items: center;">              
-              <div class="circle big cover arsenal"></div>
-            </div>
-            <div class="col-sm-50" style="padding: 15px; height: 75%">
-              <div class="col-sm-20 team-small-box">
-                Won:<br /> Lost:<br /> Drew:
-              </div>
-              <div class="col-sm-10 team-small-box" id="small-box-values">
-
-              </div>
-              <div class="col-sm-20 team-small-box">
-                Goals for:<br /> Goals against:<br /> Goal Difference:
-              </div>
-              <div class="col-sm-10 team-smaller-box" id="small-box-values-2">
-
-              </div>
-            </div>
+        <div id="team2" class="col-sm-30 team-box" style="padding-right: 30px;">          
+          <div class="compare-default">
+            Select a team to compare
           </div>
         </div>
         <!-- End of Team 2 -->

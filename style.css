@@ -58,6 +58,10 @@ div[class^='halo'],div[class*=' halo']:hover{
   height: 50px;
   border: 2px solid #012060; 
 }
+.medium {
+  width: 70px;
+  height: 70px;  
+}
 .big {
   width: 100px;
   height: 100px;  
@@ -99,4 +103,20 @@ div[class^='halo'],div[class*=' halo']:hover{
   font-size: 1.5em;
   text-align: left;
   color: red;
+}
+.hover-box {
+  position: absolute;
+  height: 150px;
+  width: 400px;
+  background-color: rgba(64,64,64,0.8);
+
+}
+.compare-default {
+  font-size: 2em;
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 180px;
 }

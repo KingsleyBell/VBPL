@@ -50,20 +50,24 @@ function addClubs() {
 		var div = d3.select("body")
 					.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
 					.append("div")
+					.attr("id", "height" + i)
 					.attr("style", "width: 100%; height: " + netWorthHeight + "%; position: relative;")
 
 		//Append wins bar
 		div.append("div")
+		.attr("id", "w" + i)
 		.attr("class","no-padding")	
 		.attr("style", "width: 10%; height: " + winHeight + "px; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;");
 
 		//Append draws bar
-		div.append("div")		
+		div.append("div")
+		.attr("id", "d" + i)
 		.attr("class","no-padding")	
 		.attr("style", "width: 10%; height: " + drawHeight + "px; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;");
 
 		//Append losses bar
-		div.append("div")		
+		div.append("div")
+		.attr("id", "l" + i)
 		.attr("class","no-padding")	
 		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;");
 
@@ -117,6 +121,10 @@ $(document).ready(function(){
 			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding'><b style='font-size: 2em;'>" + team + "</b></div><div class='col-sm-10 no-padding' style='display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-50' style='height: 75%;'><div class='col-sm-20 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-20 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");			
 		}
 
+    	$('body').animate({
+        	scrollTop: $("#team1").offset().top
+    	}, 500);
+
 	});
 
 	$("#field").on("mouseenter", "[id^=team-]", function(){
@@ -158,7 +166,46 @@ $(document).ready(function(){
     	$('#teamTooltip').remove();
     });
 	
-	
+	$("#wld").change(function() {		
+		$("#y5").text("20");
+		$("#y4").text("16");
+		$("#y3").text("12");
+		$("#y2").text("8");
+		$("#y1").text("4");
+		$("#y-axis-label").text("Wins/Losses/Draws");
+
+		for (var i = 0; i < clubData2016.length; i++) {
+			var winHeight = (clubData2016[i].w/20)*440 + 8;
+			var drawHeight = (clubData2016[i].d/20)*440;
+			var lossHeight = (clubData2016[i].l/20)*440 + 8;
+
+			$("#height" + i).height("100%");
+			$("#w" + i).height(winHeight);
+			$("#d" + i).height(drawHeight);
+			$("#l" + i).height(lossHeight);
+		}
+	});
+
+	$("#overall").change(function() {		
+		$("#y5").text("2500");
+		$("#y4").text("2000");
+		$("#y3").text("1500");
+		$("#y2").text("1000");
+		$("#y1").text("500");
+		$("#y-axis-label").text("Net Worth (Million £)");
+
+		for (var i = 0; i < clubData2016.length; i++) {
+			var netWorthHeight = (1 - (clubData2016[i].netWorth/2500))*100;
+			var winHeight = clubData2016[i].w*5 + 8;
+			var drawHeight = clubData2016[i].d*5;
+			var lossHeight = clubData2016[i].l*5 + 8;
+
+			$("#height" + i).height(netWorthHeight + "%");
+			$("#w" + i).height(winHeight);
+			$("#d" + i).height(drawHeight);
+			$("#l" + i).height(lossHeight);
+		}
+	});
 
 });
 

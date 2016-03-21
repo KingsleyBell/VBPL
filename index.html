@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="clubs.css">   
 
     <!-- JQueary -->
-    <script src="jquery-1.12.2.min"></script>
+    <script type="text/javascript" src="jquery-1.12.2.min.js"></script>
 
   	<!-- JavaScript files -->
   	<script type="text/javascript" src="d3.min.js" charset="utf-8"></script>
@@ -73,32 +73,32 @@
     <!-- End of Top Teams -->
 
     <!-- Main Graph -->
-    <div class="cotainer-fluid no-padding" style="height: 600px;">
+    <div class="cotainer-fluid no-padding" style="height: 550px;">
       <!-- Y-axis and data section -->
       <div class="row">
         <!-- Y-Axis -->
         <div class="col-sm-4 no-padding blue-back" style="height: 500px;">
           <!-- Y-axis label -->
-          <div class="col-sm-20 no-padding full-height" style="writing-mode: vertical-rl; text-align: center;">            
+          <div id="y-axis-label" class="col-sm-20 no-padding full-height" style="writing-mode: vertical-rl; text-align: center;">            
             Net Worth (Million £)
           </div>
           <!-- End of Y-axis label -->
 
           <!-- Y-axis points -->
           <div class="col-sm-40 no-padding full-height">
-            <div class="y-value">
+            <div id="y5" class="y-value">
               2500
             </div>
-            <div class="y-value no-padding">
+            <div id="y4" class="y-value no-padding">
               2000
             </div>
-            <div class="y-value no-padding">
+            <div id="y3" class="y-value no-padding">
               1500
             </div>
-            <div class="y-value no-padding">
+            <div id="y2" class="y-value no-padding">
               1000
             </div>
-            <div class="y-value no-padding">
+            <div id="y1" class="y-value no-padding">
               500
             </div>
           </div>
@@ -108,7 +108,7 @@
         <!-- End of Y-Axis -->
 
         <!-- Data -->
-        <div id="field" class="col-sm-48 no-padding field full-height" style="height: 500px; border-left: 3px solid #404040; border-bottom: 3px solid #404040; border-right: 3px solid #404040;">          
+        <div id="field" class="col-sm-48 no-padding field" style="height: 500px;">
           <div class="col-sm-3 full-height no-padding">
           </div>
           <div class="col-sm-3 full-height no-padding">
@@ -152,12 +152,46 @@
         </div>
         <!-- End of Data Section -->
 
-        <div class="col-sm-8 no-padding   grey-back" style="height: 500px;"></div>
+        <!-- Right column -->
+        <div class="col-sm-8 grey-back" style="height: 500px;">
+          <div class="col-sm-60 right-column-box" style="height: 25%; border-bottom: 1px solid white;">
+            <h3>Views</h3>
+            <form action="">
+              <input id="overall" type="radio" name="gender" value="overall" checked="checked"> Overall<br>
+              <input id="wld" type="radio" name="gender" value="wld"> W/L/D
+            </form>
+          </div>          
+          <div class="col-sm-60 right-column-box" style="height: 35%;">
+            <h3>Key</h3>
+            <div class="col-sm-40 no-padding">
+              <div style="10px; width: 60px; height: 20px; background-color: rgba(0,127,255,0.6);"></div>
+              <br>
+              <div style="width: 60px; height: 20px; background-color: rgba(255,255,255,0.6);"></div>
+              <br>
+              <div style="width: 60px; height: 20px; background-color: rgba(255,91,0,0.6);"></div>
+            </div>
+            <div class="col-sm-20 no-padding">
+              Wins<br><br>Draws<br><br>Losses
+            </div>
+          </div>
+          <div class="col-sm-60 right-column-box" style="height: 40%;">
+            <div class="col-sm-40 no-padding">
+              <div class="circle halo-green no-transform"></div>
+              <div class="circle halo-white no-transform"></div>
+              <div class="circle halo-red no-transform"></div>
+            </div>
+            <div class="col-sm-20 no-padding">
+              <br>+ GD<br><br><br>0 GD<br><br><br>0 GD
+            </div>                         
+          </div>
+        </div>
+        <!-- End of Right Column -->
+
       </div>
       <!-- End of Y-axis and data section -->        
 
       <!-- X-Axis -->      
-      <div class="row blue-back" style="height: 100px;">        
+      <div class="row blue-back" style="height: 50px;">        
         <!-- X-Axis points-->      
         <div class="col-sm-4 no-padding" style="text-align: right; height: 60%;">
           0

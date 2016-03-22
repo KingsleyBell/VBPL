@@ -89,36 +89,48 @@ $(document).ready(function(){
 
 	var team1 = null;
 	var team2 = null;
+	var flick = false;
 
+	// ADD team to compare box on click
 	$("#field").on("click", "[id^=team-]", function(){
 		var team = $(this).prop("id").substring(5);
 		var jsonTeam = getTeamByName(team)[0];
 
 		if (team1 == team) {
 			team1 = null;
+			flick = true;
 			$("#team1").empty();
 			$("#team1").append("<div class='compare-default'>Select a team to compare</div>");
 		}
 		else if (team2 == team) {
 			team2 = null;
+			flick = false;
 			$("#team2").empty();
 			$("#team2").append("<div class='compare-default'>Select a team to compare</div>");
 		}
 		else if (team1 == null) {
 			team1 = team;
+			flick = true;
 			$("#team1").empty();
 			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding'><b style='font-size: 2em;'>" + team + "</b></div><div class='col-sm-10 no-padding' style='display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-50' style='height: 75%;'><div class='col-sm-20 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-20 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");
 		}		
 		else if (team2 == null) {
 			team2 = team;
+			flick = false;
 			$("#team2").empty();
 			$("#team2").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding'><b style='font-size: 2em;'>" + team + "</b></div><div class='col-sm-10 no-padding' style='display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-50' style='height: 75%;'><div class='col-sm-20 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-20 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");
 		}		
-		else {
+		else  if (flick == false){
 			team1 = team;
-			team2 = null;
+			flick = true;			
 			$("#team1").empty();
 			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding'><b style='font-size: 2em;'>" + team + "</b></div><div class='col-sm-10 no-padding' style='display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-50' style='height: 75%;'><div class='col-sm-20 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-20 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");			
+		}
+		else {
+			team2 = team;
+			flick = false;
+			$("#team2").empty();
+			$("#team2").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding'><b style='font-size: 2em;'>" + team + "</b></div><div class='col-sm-10 no-padding' style='display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-50' style='height: 75%;'><div class='col-sm-20 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-20 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");			
 		}
 
     	$('body').animate({
@@ -127,11 +139,12 @@ $(document).ready(function(){
 
 	});
 
+	// Team hoverbox on hover
 	$("#field").on("mouseenter", "[id^=team-]", function(){
 		var team = $(this).prop("id").substring(5);
 		var jsonTeam = getTeamByName(team)[0];
 		var percentLeft = $(this).offset().left/$(window).width() * 100;
-		var percentTop = $(this).offset().top/$(window).height() * 100;		
+		var percentTop = ($(this).offset().top-$(window).scrollTop())/$(window).height() * 100;		
 
        	var hoverBox = $('body').append("<div id='teamTooltip' class='hover-box'><div class='col-sm-60' style='font-size: 2em; height: 20%; margin: 0%;'>" + team + "</div><div class='col-sm-20' style='height: 80%; display: flex; align-items: center;'><div class='circle medium cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40' style='background-color: rgba(44,44,44,0.5); background-clip: content-box; padding-bottom: 3%; padding-top: 3%; height: 80%'><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>Win:<br />Loss:<br />Draw:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>G/F:<br />G/A:<br />GD:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");
 	    

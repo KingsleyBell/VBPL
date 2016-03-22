@@ -32,19 +32,19 @@
 
   <body onload="addClubs()">
     <!-- Header -->
-    <div class="container-fluid no-padding">
-      <div class="row blue-back">      
-        <center>
-          <h1 style="margin: 0%;">VBPL</h1>          
-        </center>
-      </div>         
-      <div class="row grey-back">        
-        <div class="col-sm-60">      
-          <center>
-            <h1 style="margin: 0%;"><small>BARCLAYS PREMIER LEAGUE VISUALISATION</small></h1>          
-          </center>
-        </div>        
-      </div>   
+    <div class="header-icon cover"></div>
+    <div class="container-fluid no-padding grey-back" style="height: 200px;">
+      <div class="col-sm-60" style="padding-top: 30px;">        
+        <div class="col-sm-60" style="text-align: center;">
+          <h1 style="color: #909090; margin: 0%;">
+            BARCLAYS PREMIER LEAGUE VISUALISATION
+            <br>
+            <small>Do the rich teams always win?</small>
+          </h1>
+          <br><br><br>
+          <font style="font-size: 1.2em; color: red;">-Click on teams to compare</font>
+        </div>
+      </div>
     </div>
     <!-- End of Header -->
 
@@ -79,13 +79,13 @@
         <!-- Y-Axis -->
         <div class="col-sm-4 no-padding blue-back" style="height: 500px;">
           <!-- Y-axis label -->
-          <div id="y-axis-label" class="col-sm-20 no-padding full-height" style="writing-mode: vertical-rl; text-align: center;">            
+          <div id="y-axis-label" class="col-sm-40 no-padding full-height" style="writing-mode: vertical-rl; text-align: center; left: -20px;">            
             Net Worth (Million £)
           </div>
           <!-- End of Y-axis label -->
 
           <!-- Y-axis points -->
-          <div class="col-sm-40 no-padding full-height">
+          <div class="col-sm-20 no-padding full-height">
             <div id="y5" class="y-value">
               2500
             </div>
@@ -157,8 +157,8 @@
           <div class="col-sm-60 right-column-box" style="height: 25%; border-bottom: 1px solid white;">
             <h3>Views</h3>
             <form action="">
-              <input id="overall" type="radio" name="gender" value="overall" checked="checked"> Overall<br>
-              <input id="wld" type="radio" name="gender" value="wld"> W/L/D
+              <input id="overall" type="radio" name="gender" value="overall" checked="checked">  Networth<br>
+              <input id="wld" type="radio" name="gender" value="wld">  Win/Loss/Draw
             </form>
           </div>          
           <div class="col-sm-60 right-column-box" style="height: 35%;">
@@ -181,7 +181,7 @@
               <div class="circle halo-red no-transform"></div>
             </div>
             <div class="col-sm-20 no-padding">
-              <br>+ GD<br><br><br>0 GD<br><br><br>0 GD
+              <br>+ GD<br><br><br>0 GD<br><br><br>- GD
             </div>                         
           </div>
         </div>

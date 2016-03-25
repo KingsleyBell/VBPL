@@ -6,7 +6,7 @@ $.ajax({
     'dataType': "json",
     'success': function (data) {
         clubData2016 = data;
-        console.log("yay");
+        console.log("loaded 2016 data");
     }
 });
 
@@ -59,6 +59,7 @@ function addClubs() {
 		.attr("class","no-padding")	
 		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;");
 
+		//Append team circle
 		d3.select("body")
 		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")		
 		.append("center")
@@ -73,7 +74,7 @@ function addClubs() {
 	var scrollbar = d3.select("body").select("#scrollbar");
 }
 
-$(document).ready(function(){	
+$(document).ready(function(){
 
 	var team1 = null;
 	var team2 = null;

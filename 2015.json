@@ -13,10 +13,10 @@
 {"name":"West Ham United", "netWorth":215, "w":12, "d":11, "l":15, "gf":44, "ga":47, "gd":-3, "pts":47, "form":[-1,1,1,-1,1,-1]},
 {"name":"West Bromwich Albion", "netWorth":175, "w":11, "d":11, "l":16, "gf":38, "ga":51, "gd":-13, "pts":44, "form":[-1,-1,0,1,1,1]},
 {"name":"Leicester City", "netWorth":133, "w":11, "d":8, "l":19, "gf":46, "ga":55, "gd":-9, "pts":41, "form":[0,-1,1,0,-1,-1]},
-{"name":"Newcastle United", "netWorth":221, "w":10, "d":9, "l":19, "gf":32, "ga":39, "gd":-7, "pts":33, "form":[-1,0,-1,-1,0,-1]},
-{"name":"Sunderland", "netWorth":121, "w":8, "d":9, "l":13, "gf":30, "ga":40, "gd":-10, "pts":33, "form":[0,-1,-1,1,1,-1]},
-{"name":"Aston Villa", "netWorth":165, "w":6, "d":7, "l":16, "gf":35, "ga":54, "gd":-19, "pts":25, "form":[-1,0,1,-1,0,0]},
-{"name":"Hull City", "netWorth":0, "w":6, "d":7, "l":17, "gf":31, "ga":54, "gd":-23, "pts":25, "form":[-1,0,-1,-1,-1,0]},
-{"name":"Burnley", "netWorth":0, "w":6, "d":6, "l":17, "gf":28, "ga":54, "gd":-26, "pts":24, "form":[-1,1,-1,-1,-1,-1]},
-{"name":"Queens Park Rangers", "netWorth":0, "w":3, "d":7, "l":20, "gf":22, "ga":57, "gd":-35, "pts":16, "form":[1,-1,-1,-1,-1,-1]}
+{"name":"Newcastle United", "netWorth":221, "w":10, "d":9, "l":19, "gf":40, "ga":63, "gd":-23, "pts":39, "form":[-1,0,-1,-1,0,-1]},
+{"name":"Sunderland", "netWorth":121, "w":7, "d":17, "l":14, "gf":31, "ga":53, "gd":-22, "pts":38, "form":[0,-1,-1,1,1,-1]},
+{"name":"Aston Villa", "netWorth":165, "w":10, "d":8, "l":20, "gf":31, "ga":57, "gd":-26, "pts":38, "form":[-1,0,1,-1,0,0]},
+{"name":"Hull City", "netWorth":0, "w":8, "d":11, "l":19, "gf":33, "ga":51, "gd":-18, "pts":35, "form":[-1,0,-1,-1,-1,0]},
+{"name":"Burnley", "netWorth":0, "w":7, "d":12, "l":19, "gf":28, "ga":53, "gd":-25, "pts":33, "form":[-1,1,-1,-1,-1,-1]},
+{"name":"Queens Park Rangers", "netWorth":0, "w":8, "d":6, "l":24, "gf":42, "ga":73, "gd":-31, "pts":30, "form":[1,-1,-1,-1,-1,-1]}
 ]}

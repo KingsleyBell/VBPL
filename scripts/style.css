@@ -1,8 +1,11 @@
-body {
+html {
+  height: 50%;
+}
+body {  
 	font-family: "Helvetica", Helvetica, sans-serif;
-    margin-right: 0px;
-    color: white;
-    overflow-x: hidden
+  margin: 0%;
+  color: white;
+  overflow-x: hidden
 }
 .blue-back {
 	background-color: #012060;
@@ -31,28 +34,41 @@ body {
   background-size: cover;
 }
 .field {
-  background-image: url("images/dullfield.png");
+  background-image: url("../images/green.png");
+  background-size: 100% 100%;  
 }
 .y-value {
 	width: 100%;
 	text-align: right;
-	height: 20%
+	height: 20%;
+  border-top: 1px solid white;
 }
 .circle {    
     position: relative;
-    overflow: hidden;
+    overflow: hidden;    
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;          
 }
-.normal {  
+div[class^='halo'],div[class*=' halo']:hover{ 
+  -moz-box-shadow: 0 0 10px #ccc; 
+  -webkit-box-shadow: 0 0 10px #ccc; 
+  box-shadow: 0 0 10px #ccc;
+}
+.normal {
+  background-color: rgba(0,0,0,0.2);
   width: 50px;
   height: 50px;
   border: 2px solid #012060; 
 }
+.medium {
+  width: 70px;
+  height: 70px;  
+}
 .big {
   width: 100px;
-  height: 100px;  
+  height: 100px;
+  border: 2px solid rgba(200,200,200,0.5);
 }
 .halo-green{
   width: 60px;
@@ -75,6 +91,9 @@ body {
   top: 0%;
   transform: translateY(-100%);
 }
+.no-transform {
+  transform: translateY(0%); 
+}
 .team-box {
   height: 100%;
   background-color: #2D2D2D;
@@ -84,4 +103,39 @@ body {
   padding: 0px;
   font-size: 1.5em;
   text-align: right;
+}
+.team-smaller-box {
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 1.5em;
+  text-align: left;
+  color: red;
+}
+.hover-box {
+  position: absolute;
+  height: 150px;
+  width: 400px;
+  background-color: rgba(64,64,64,0.8);
+}
+.header-icon {
+  position: absolute;
+  left: 20px;
+  height: 200px;
+  width: 300px;
+  background-image: url("../images/bpl.png");
+}
+.compare-default {
+  font-size: 2em;
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 180px;
+}
+.right-column-box {
+  padding: 0px;
+  width: 80%;
+  margin: 0 auto;
+  height: fit-content;
 }

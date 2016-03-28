@@ -2,7 +2,7 @@ var leagueData;
 var yearData;
 var maxWorth;
 var maxWLD;
-var view;
+var view = 0;
 $.ajax({
     'async': false,
     'global': false,
@@ -164,7 +164,8 @@ $(document).ready(function(){
     });
 	
 	//win loss draw view
-	$("#wld").change(function() {		
+	$("#wld").change(function() {	
+		view = 1;	
 		$("#y5").text(maxWLD);
 		$("#y4").text(maxWLD*0.8);
 		$("#y3").text(maxWLD*0.6);
@@ -172,21 +173,22 @@ $(document).ready(function(){
 		$("#y1").text(maxWLD*0.2);
 		$("#y-axis-label").text("Wins/Losses/Draws");
 
-		for (var i = 1; i <= yearData.length; i++) {
+		for (var i = 0; i < yearData.length; i++) {
 			var winHeight = (yearData[i].w/maxWLD)*440 + 8;
 			var drawHeight = (yearData[i].d/maxWLD)*440;
 			var lossHeight = (yearData[i].l/maxWLD)*440 + 8;
 
-			$("#height" + i).height("100%");
-			$("#w" + i).height(winHeight);
-			$("#d" + i).height(drawHeight);
-			$("#l" + i).height(lossHeight);
+			$("#height" + (i+1)).height("100%");
+			$("#w" + (i+1)).height(winHeight);
+			$("#d" + (i+1)).height(drawHeight);
+			$("#l" + (i+1)).height(lossHeight);
 			console.log(i);
 		}
 	});
 
 	//Overall view
-	$("#overall").change(function() {		
+	$("#overall").change(function() {	
+		view = 0;	
 		$("#y5").text(maxWorth);
 		$("#y4").text(maxWorth*0.8);
 		$("#y3").text(maxWorth*0.6);
@@ -194,16 +196,16 @@ $(document).ready(function(){
 		$("#y1").text(maxWorth*0.2);
 		$("#y-axis-label").text("Net Worth (Million £)");
 
-		for (var i = 1; i <= yearData.length; i++) {
+		for (var i = 0; i < yearData.length; i++) {
 			var netWorthHeight = (1 - (yearData[i].netWorth/maxWorth))*100;
 			var winHeight = yearData[i].w*5 + 8;
 			var drawHeight = yearData[i].d*5;
 			var lossHeight = yearData[i].l*5 + 8;
 
-			$("#height" + i).height(netWorthHeight + "%");
-			$("#w" + i).height(winHeight);
-			$("#d" + i).height(drawHeight);
-			$("#l" + i).height(lossHeight);
+			$("#height" + (i+1)).height(netWorthHeight + "%");
+			$("#w" + (i+1)).height(winHeight);
+			$("#d" + (i+1)).height(drawHeight);
+			$("#l" + (i+1)).height(lossHeight);
 		}
 	});
 
@@ -215,6 +217,9 @@ $(document).ready(function(){
     	maxWorth = leagueData[flip].maxWorth;
         maxWLD = leagueData[flip].maxWLD;
         addClubs();
+        if (view == 1){
+        	$("#wld").trigger("change");
+        }
 	});
 
 });

@@ -94,6 +94,17 @@ div[class^='halo'],div[class*=' halo']:hover{
 .no-transform {
   transform: translateY(0%); 
 }
+.sliderLabel
+{
+    position: absolute;
+    top: 20;
+    text-align: center;
+    display: inline-block;
+    background-color: #fff;    
+    padding: 0 5px;        
+    margin-left: -4px;
+    color: black;
+}
 .team-box {
   height: 100%;
   background-color: #2D2D2D;

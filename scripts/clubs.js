@@ -1,4 +1,5 @@
 var leagueData;
+var year;
 var yearData;
 var maxWorth;
 var maxWLD;
@@ -10,6 +11,7 @@ $.ajax({
     'dataType': "json",
     'success': function (data) {
         leagueData = data;
+        year = leagueData[0].year;
         yearData = leagueData[0].yearData;
         maxWorth = leagueData[0].maxWorth;
         maxWLD = leagueData[0].maxWLD;
@@ -23,7 +25,7 @@ function addClubs() {
 	//Add top 5 teams
 	for (var i = 1; i <= 5; i++) {		
 		$("#top" + (i))
-		.html("<span style='color: red;'>" + i + ". </span><span style='color: black;'>" + yearData[i].name + "</span>");		
+		.html("<span style='color: red;'>" + i + ". </span><span style='color: black;'>" + yearData[i-1].name + "</span>");		
 	}	
 
 	for (var i = 0; i < yearData.length; i++) {
@@ -159,6 +161,7 @@ $(document).ready(function(){
 	    
     });
 
+	//Remove hover box when mouse leaves team
     $("#field").on("mouseleave", "[id^=team-]", function(){
     	$('#teamTooltip').remove();
     });
@@ -211,7 +214,11 @@ $(document).ready(function(){
 
 	//Year changed
 	$('#scrollbar').on("input", function() {
-    	console.log("Year change: " + $(this).val());
+		year = $(this).val()    	
+    	var lbl = $(".sliderLabel").text(year);
+    	var leftPx = (year-1995)/(2016-1995)*(this.clientWidth);
+    	lbl.css({ left: leftPx });
+
     	var flip = parseInt($(this).val()) % 2;    	
     	yearData = leagueData[flip].yearData;
     	maxWorth = leagueData[flip].maxWorth;
@@ -221,6 +228,16 @@ $(document).ready(function(){
         	$("#wld").trigger("change");
         }
 	});
+
+	//Remove year tooltip text when mouse leaves scroller
+    $("#scrollbar").on("mouseleave", function(){
+    	$('.sliderLabel').hide();
+    });
+
+	//Remove year tooltip text when mouse leaves scroller
+    $("#scrollbar").on("mouseenter", function(){    	
+    	$('.sliderLabel').show();
+    });
 
 });
 

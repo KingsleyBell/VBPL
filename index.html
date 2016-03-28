@@ -32,7 +32,7 @@
     <title>VBPL</title>  
   </head>
 
-  <body onload="addClubs()">
+  <body>
     <!-- Header -->
     <div class="header-icon cover"></div>
     <div class="container-fluid no-padding grey-back" style="height: 200px;">
@@ -54,20 +54,20 @@
     <div class="container-fluid no-padding">
       <div class="row blue-back">         
         <div class="col-sm-60 no-padding">
-          <div class="col-sm-12 top-five">
-            1.
+          <div id="top1" class="col-sm-12 top-five">
+            <span style="color: red;">1.</span>
           </div>
-          <div class="col-sm-12 top-five">
-            2.
+          <div id="top2" class="col-sm-12 top-five">
+            <span style="color: red;">2.</span>
           </div>
-          <div class="col-sm-12 top-five">
-            3.
+          <div id="top3" class="col-sm-12 top-five">
+            <span style="color: red;">3.</span>
           </div>
-          <div class="col-sm-12 top-five">
-            4.
+          <div id="top4" class="col-sm-12 top-five">
+            <span style="color: red;">4.</span>
           </div>
-          <div class="col-sm-12 top-five">
-            5.
+          <div id="top5" class="col-sm-12 top-five">
+            <span style="color: red;">5.</span>
           </div>          
         </div>        
       </div>           
@@ -111,45 +111,423 @@
 
         <!-- Data -->
         <div id="field" class="col-sm-48 no-padding field" style="height: 500px;">
+          <!-- 1 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height1" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w1" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d1" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l1" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo1" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle1" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 2 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height2" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w2" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d2" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l2" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo2" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle2" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 3 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height3" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w3" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d3" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l3" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo3" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle3" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 4 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height4" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w4" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d4" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l4" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo4" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle4" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 5 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height5" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w5" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d5" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l5" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo5" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle5" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 6 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height6" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w6" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d6" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l6" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo6" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle6" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 7 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height7" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w7" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d7" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l7" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo7" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle7" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 8 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height8" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w8" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d8" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l8" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo8" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle8" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 9 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height9" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w9" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d9" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l9" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo9" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle9" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 10 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height10" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w10" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d10" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l10" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo10" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle10" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 11 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height11" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w11" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d11" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l11" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo11" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle11" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 12 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height12" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w12" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d12" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l12" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo12" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle12" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 13 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height13" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w13" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d13" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l13" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo13" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle13" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 14 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height14" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w14" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d14" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l14" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo14" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle14" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 15 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height15" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w15" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d15" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l15" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo15" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle15" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 16 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height16" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w16" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d16" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l16" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo16" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle16" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 17 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height17" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w17" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d17" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l17" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo17" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle17" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 18 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height18" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w18" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d18" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l18" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo18" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle18" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 19 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height19" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w19" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d19" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l19" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo19" class="circle">
+                <!-- must add ID and background image -->
+                <div id="teamCircle19" class="circle normal cover"></div>
+              </div>
+            </center>
           </div>
+          <!-- 20 -->
           <div class="col-sm-3 full-height no-padding">
+            <div id="height20" style="width: 100%; position: relative;">
+              <!-- must add height -->
+              <div id="w20" class="no-padding" style="width: 10%; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;">
+              </div>
+              <!-- must add height -->
+              <div id="d20" class="no-padding" style="width: 10%; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;">
+              </div>
+              <!-- must add height -->
+              <div id="l20" class="no-padding" style="width: 10%; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;">
+              </div>              
+            </div>
+            <center>
+              <!-- must add haloColor -->
+              <div id="halo20" class="circle">                
+              </div>
+            </center>
           </div>           
         </div>
         <!-- End of Data Section -->
@@ -286,7 +664,7 @@
           <text style="position: absolute; right: 10px; line-height: 55px;">1995</text>
         </div>
         <div class="col-sm-50 no-padding full-height" style="display: flex; justify-content: center; align-items: center;">                              
-            <input type="range" min="1995" max="2016" value="2016" step="1" name="year " id="scrollbar" value="10">
+            <input type="range" min=1995 max=2016 value=2016 step=1 name="year " id="scrollbar" value="10">
         </div>
         <div class="col-sm-5 no-padding full-height" style="color: black;">
           <text style="position: absolute; left: 10px; line-height: 55px;">2016</text>

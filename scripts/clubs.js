@@ -1,80 +1,75 @@
-var clubData2016;
+var leagueData;
+var yearData;
+var maxWorth;
+var maxWLD;
+var view;
 $.ajax({
     'async': false,
     'global': false,
-    'url': "./data/2016.json",
+    'url': "./data/leagueData.json",
     'dataType': "json",
     'success': function (data) {
-        clubData2016 = data;
-        console.log("loaded 2016 data");
+        leagueData = data;
+        yearData = leagueData[0].yearData;
+        maxWorth = leagueData[0].maxWorth;
+        maxWLD = leagueData[0].maxWLD;
+        console.log("loaded league data");
     }
 });
 
 
 function addClubs() {
-	for (var i = 0; i < 5; i++) {
-		d3.select("body")
-		.select("div.col-sm-12.top-five:nth-child(" + (i + 1) + ")")
-		.append("text")
-		.attr("style", "color: black;")
-		.text(clubData2016[i].name);
+
+	//Add top 5 teams
+	for (var i = 1; i <= 5; i++) {		
+		$("#top" + (i))
+		.html("<span style='color: red;'>" + i + ". </span><span style='color: black;'>" + yearData[i].name + "</span>");		
 	}	
 
-
-	for (var i = 0; i < clubData2016.length; i++) {
-		var netWorthHeight = (1 - (clubData2016[i].netWorth/2500))*100;
-		var winHeight = clubData2016[i].w*5 + 8;
-		var drawHeight = clubData2016[i].d*5;
-		var lossHeight = clubData2016[i].l*5 + 8;
+	for (var i = 0; i < yearData.length; i++) {
+		var netWorthHeight = (1 - (yearData[i].netWorth/maxWorth))*100;
+		var winHeight = yearData[i].w*5 + 8;
+		var drawHeight = yearData[i].d*5;
+		var lossHeight = yearData[i].l*5 + 8;
 		var haloColor;
-		if (clubData2016[i].gd > 0) {
+		if (yearData[i].gd > 0) {
 			haloColor = "halo-green";
-		} else if (clubData2016[i].gd < 0) {
+		} else if (yearData[i].gd < 0) {
 			haloColor = "halo-red";
 		} else {
 			haloColor = "halo-white";
 		}
 		
-		var div = d3.select("body")
-					.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")
-					.append("div")
-					.attr("id", "height" + i)
-					.attr("style", "width: 100%; height: " + netWorthHeight + "%; position: relative;")
+		//Set height of team
+		$("#height" + (i+1))
+		.css({"width": "100%", "height": netWorthHeight + "%", "position": "relative"});		
 
-		//Append wins bar
-		div.append("div")
-		.attr("id", "w" + i)
-		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + winHeight + "px; background-color: rgba(0,127,255,0.6); position: absolute; left: 20%; bottom: 50px;");
+		//Set wins bar
+		$("#w" + (i+1))
+		.css({"height": winHeight + "px"});
 
-		//Append draws bar
-		div.append("div")
-		.attr("id", "d" + i)
-		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + drawHeight + "px; background-color: rgba(255,255,255,0.6); position: absolute; left: 45%; bottom: 58px;");
+		//Set draws bar
+		$("#d" + (i+1))
+		.css({"height": drawHeight + "px"});
 
-		//Append losses bar
-		div.append("div")
-		.attr("id", "l" + i)
-		.attr("class","no-padding")	
-		.attr("style", "width: 10%; height: " + lossHeight + "px; background-color: rgba(255,91,0,0.6); position: absolute; left: 70%; bottom: 50px;");
+		//Set losses bar
+		$("#l" + (i+1))
+		.css({"height": lossHeight + "px"});
 
-		//Append team circle
-		d3.select("body")
-		.select("div.col-sm-3.full-height:nth-child(" + (i + 1) + ")")		
-		.append("center")
-		.append("div")		
-		.attr("class", "circle " + haloColor)		
-		.append("div")
-		.attr("id", "team-" + clubData2016[i].name)
-		.attr("class", "circle normal cover")
-		.attr("style","background-image: url(\"images/clubs/" + clubData2016[i].name.replace(/ /g, "_") + ".ico\");");			
+		//Set team halo and circle
+		$("#halo" + (i+1)).empty();
+		$("#halo" + (i+1))
+		.attr("class", "circle " + haloColor);
+		$("#halo" + (i+1))
+		.append("<div id='team-" + yearData[i].name + "' class='circle normal cover' style='background-image: url(\"images/clubs/" + yearData[i].name.replace(/ /g, "_") + ".ico\");'></div>");
+		
 	}
 
-	var scrollbar = d3.select("body").select("#scrollbar");
 }
 
 $(document).ready(function(){
+
+	addClubs();
 
 	var team1 = null;
 	var team2 = null;
@@ -168,39 +163,42 @@ $(document).ready(function(){
     	$('#teamTooltip').remove();
     });
 	
+	//win loss draw view
 	$("#wld").change(function() {		
-		$("#y5").text("20");
-		$("#y4").text("16");
-		$("#y3").text("12");
-		$("#y2").text("8");
-		$("#y1").text("4");
+		$("#y5").text(maxWLD);
+		$("#y4").text(maxWLD*0.8);
+		$("#y3").text(maxWLD*0.6);
+		$("#y2").text(maxWLD*0.4);
+		$("#y1").text(maxWLD*0.2);
 		$("#y-axis-label").text("Wins/Losses/Draws");
 
-		for (var i = 0; i < clubData2016.length; i++) {
-			var winHeight = (clubData2016[i].w/20)*440 + 8;
-			var drawHeight = (clubData2016[i].d/20)*440;
-			var lossHeight = (clubData2016[i].l/20)*440 + 8;
+		for (var i = 1; i <= yearData.length; i++) {
+			var winHeight = (yearData[i].w/maxWLD)*440 + 8;
+			var drawHeight = (yearData[i].d/maxWLD)*440;
+			var lossHeight = (yearData[i].l/maxWLD)*440 + 8;
 
 			$("#height" + i).height("100%");
 			$("#w" + i).height(winHeight);
 			$("#d" + i).height(drawHeight);
 			$("#l" + i).height(lossHeight);
+			console.log(i);
 		}
 	});
 
+	//Overall view
 	$("#overall").change(function() {		
-		$("#y5").text("2500");
-		$("#y4").text("2000");
-		$("#y3").text("1500");
-		$("#y2").text("1000");
-		$("#y1").text("500");
+		$("#y5").text(maxWorth);
+		$("#y4").text(maxWorth*0.8);
+		$("#y3").text(maxWorth*0.6);
+		$("#y2").text(maxWorth*0.4);
+		$("#y1").text(maxWorth*0.2);
 		$("#y-axis-label").text("Net Worth (Million £)");
 
-		for (var i = 0; i < clubData2016.length; i++) {
-			var netWorthHeight = (1 - (clubData2016[i].netWorth/2500))*100;
-			var winHeight = clubData2016[i].w*5 + 8;
-			var drawHeight = clubData2016[i].d*5;
-			var lossHeight = clubData2016[i].l*5 + 8;
+		for (var i = 1; i <= yearData.length; i++) {
+			var netWorthHeight = (1 - (yearData[i].netWorth/maxWorth))*100;
+			var winHeight = yearData[i].w*5 + 8;
+			var drawHeight = yearData[i].d*5;
+			var lossHeight = yearData[i].l*5 + 8;
 
 			$("#height" + i).height(netWorthHeight + "%");
 			$("#w" + i).height(winHeight);
@@ -209,10 +207,20 @@ $(document).ready(function(){
 		}
 	});
 
+	//Year changed
+	$('#scrollbar').on("input", function() {
+    	console.log("Year change: " + $(this).val());
+    	var flip = parseInt($(this).val()) % 2;    	
+    	yearData = leagueData[flip].yearData;
+    	maxWorth = leagueData[flip].maxWorth;
+        maxWLD = leagueData[flip].maxWLD;
+        addClubs();
+	});
+
 });
 
 function getTeamByName(teamName) {
-  return clubData2016.filter(
-      function(clubData2016){return clubData2016.name == teamName}
+  return yearData.filter(
+      function(yearData){return yearData.name == teamName}
   );
 }

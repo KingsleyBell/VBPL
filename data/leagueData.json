@@ -1,5 +1,5 @@
 [
-	{"2016":
+	{"year": 2016, "maxWorth": 2500, "maxWLD": 20, "yearData":
 		[
 			{"name":"Leicester City", "netWorth":133, "w":18, "d":9, "l":3, "gf":53, "ga":31, "gd":22, "pts":63, "form":[1,-1,1,0,1,1]},
 			{"name":"Tottenham Hotspur", "netWorth":710, "w":16, "d":10, "l":4, "gf":53, "ga":24, "gd":29, "pts":58, "form":[1,1,1,-1,0,1]},
@@ -23,15 +23,15 @@
 			{"name":"Aston Villa", "netWorth":165, "w":3, "d":7, "l":20, "gf":22, "ga":57, "gd":-35, "pts":16, "form":[1,-1,-1,-1,-1,-1]}
 		]
 	},
-	{"2015":
+	{"year": 2015, "maxWorth": 2800, "maxWLD": 26, "yearData":
 		[
 			{"name":"Chelsea", "netWorth":826, "w":26, "d":9, "l":3, "gf":73, "ga":32, "gd":41, "pts":87, "form":[1,-1,1,0,1,1]},
 			{"name":"Manchester City", "netWorth":907, "w":24, "d":7, "l":7, "gf":83, "ga":38, "gd":45, "pts":79, "form":[1,1,1,-1,0,1]},
 			{"name":"Arsenal", "netWorth":1118, "w":22, "d":9, "l":7, "gf":71, "ga":36, "gd":35, "pts":75, "form":[0,1,1,-1,-1,0]},
 			{"name":"Manchester United", "netWorth":1848, "w":20, "d":10, "l":8, "gf":62, "ga":37, "gd":25, "pts":70, "form":[1,-1,-1,-1,1,0]},
 			{"name":"Tottenham Hotspur", "netWorth":710, "w":19, "d":7, "l":12, "gf":58, "ga":53, "gd":5, "pts":64, "form":[1,-1,0,1,1,1]},
-			{"name":"Liverpool", "netWorth":537, "w":18, "d":8, "l":12, "gf":52, "ga":48, "gd":4, "pts":62, "form":[1,0,-1,1,1,-1]},
-			{"name":"Southampton", "netWorth":259, "w":18, "d":6, "l":14, "gf":54, "ga":33, "gd":21, "pts":60, "form":[1,1,-1,-1,0,1]},
+			{"name":"Liverpool FC", "netWorth":537, "w":18, "d":8, "l":12, "gf":52, "ga":48, "gd":4, "pts":62, "form":[1,0,-1,1,1,-1]},
+			{"name":"Southampton FC", "netWorth":259, "w":18, "d":6, "l":14, "gf":54, "ga":33, "gd":21, "pts":60, "form":[1,1,-1,-1,0,1]},
 			{"name":"Swansea City", "netWorth":183, "w":16, "d":8, "l":14, "gf":46, "ga":49, "gd":-3, "pts":56, "form":[1,-1,0,1,1,1]},
 			{"name":"Stoke City", "netWorth":192, "w":15, "d":9, "l":14, "gf":48, "ga":45, "gd":3, "pts":54, "form":[-1,1,1,1,0,-1]},
 			{"name":"Crystal Palace", "netWorth":186, "w":13, "d":9, "l":16, "gf":47, "ga":51, "gd":-4, "pts":48, "form":[0,0,1,1,1,0]},
@@ -43,7 +43,7 @@
 			{"name":"Sunderland", "netWorth":121, "w":7, "d":17, "l":14, "gf":31, "ga":53, "gd":-22, "pts":38, "form":[0,-1,-1,1,1,-1]},
 			{"name":"Aston Villa", "netWorth":165, "w":10, "d":8, "l":20, "gf":31, "ga":57, "gd":-26, "pts":38, "form":[-1,0,1,-1,0,0]},
 			{"name":"Hull City", "netWorth":0, "w":8, "d":11, "l":19, "gf":33, "ga":51, "gd":-18, "pts":35, "form":[-1,0,-1,-1,-1,0]},
-			{"name":"Burnley", "netWorth":0, "w":7, "d":12, "l":19, "gf":28, "ga":53, "gd":-25, "pts":33, "form":[-1,1,-1,-1,-1,-1]},
+			{"name":"Burnley FC", "netWorth":0, "w":7, "d":12, "l":19, "gf":28, "ga":53, "gd":-25, "pts":33, "form":[-1,1,-1,-1,-1,-1]},
 			{"name":"Queens Park Rangers", "netWorth":0, "w":8, "d":6, "l":24, "gf":42, "ga":73, "gd":-31, "pts":30, "form":[1,-1,-1,-1,-1,-1]}
 		]
 	}

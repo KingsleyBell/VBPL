@@ -35,13 +35,21 @@ body {
 }
 .field {
   background-image: url("../images/green.png");
-  background-size: 100% 100%;  
+  background-size: 100% 100%;
+  border-top: 1px solid white;
 }
 .y-value {
+  padding-right: 2px;
 	width: 100%;
 	text-align: right;
 	height: 20%;
   border-top: 1px solid white;
+}
+.last-value {
+  padding-right: 2px;
+  width: 100%;
+  text-align: right;
+  height: 20%;
 }
 .circle {    
     position: relative;
@@ -51,15 +59,21 @@ body {
     -ms-border-radius: 50%;          
 }
 div[class^='halo'],div[class*=' halo']:hover{ 
-  -moz-box-shadow: 0 0 10px #ccc; 
-  -webkit-box-shadow: 0 0 10px #ccc; 
-  box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 5px 10px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
 }
 .normal {
   background-color: rgba(0,0,0,0.2);
   width: 50px;
   height: 50px;
   border: 2px solid #012060; 
+}
+.shadow {
+  background-color: rgba(0,0,0,0.5);
+  width: 50px;
+  height: 50px;
+  position: absolute;
 }
 .medium {
   width: 70px;
@@ -173,11 +187,11 @@ div[class^='halo'],div[class*=' halo']:hover{
   border: 2px solid #404040;
 }
 .green {
-  background-color: rgba(40,127,40,0.8);
+  background-color: rgba(0,255,0,0.5);
 }
 .white {
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
 }
 .red {
-  background-color: rgba(127,40,40,0.8);
+  background-color: rgba(255,0,0,0.5);
 }

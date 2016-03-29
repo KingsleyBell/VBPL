@@ -66,8 +66,8 @@ div[class^='halo'],div[class*=' halo']:hover{
   height: 70px;  
 }
 .big {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border: 2px solid rgba(200,200,200,0.5);
 }
 .halo-green{
@@ -110,10 +110,25 @@ div[class^='halo'],div[class*=' halo']:hover{
   background-color: #2D2D2D;
   padding: 15px;  
 }
+.team-header {
+   border-bottom: 3px solid red;
+   font-size: 2em;
+}
 .team-small-box {
   padding: 0px;
   font-size: 1.5em;
   text-align: right;
+}
+.team-medium-box {
+  padding: 0px;
+  font-size: 1.8em;
+  text-align: right;
+}
+.team-medium-left {
+  padding: 0px;
+  font-size: 1.8em;
+  text-align: left;
+  color: red;
 }
 .team-smaller-box {
   padding: 0px;
@@ -127,6 +142,9 @@ div[class^='halo'],div[class*=' halo']:hover{
   height: 150px;
   width: 400px;
   background-color: rgba(64,64,64,0.8);
+}
+.form-hover-box {
+  position: absolute;  
 }
 .header-icon {
   position: absolute;
@@ -142,11 +160,24 @@ div[class^='halo'],div[class*=' halo']:hover{
   width: 100%;
   text-align: center;
   vertical-align: middle;
-  line-height: 180px;
+  line-height: 250px;
 }
 .right-column-box {
   padding: 0px;
   width: 80%;
   margin: 0 auto;
   height: fit-content;
+}
+.form-box {
+  height: 100%;
+  border: 2px solid #404040;
+}
+.green {
+  background-color: rgba(40,127,40,0.8);
+}
+.white {
+  background-color: white;
+}
+.red {
+  background-color: rgba(127,40,40,0.8);
 }

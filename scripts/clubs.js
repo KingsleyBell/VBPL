@@ -31,9 +31,13 @@ $(document).ready(function(){
 
 	// ADD team to compare box on click
 	$("#field").on("click", "[id^=team-]", function(){
-		var team = $(this).prop("id").substring(5);
+		var rawTeam = $(this).prop("id").substring(5);
+		var team = rawTeam.replace(/\-/g, " ");
 		var jsonTeam = getTeamByName(team)[0];
-		var formColors = [];
+		var index = $.inArray(jsonTeam, yearData) + 1;
+		console.log(index);		
+		var formColors = [];		
+
 		for( var i = 0; i < 6; i++) {
 			if (jsonTeam.form[i]==1) {
 				formColors.push("green");
@@ -52,28 +56,33 @@ $(document).ready(function(){
 			$("#team1").empty();
 			$("#team1").append("<div class='compare-default'>Select a team to compare</div>");
 
-			$("#shadow1").remove();
+			oldTeam1 = null;
+			oldIndex1 = null;
+			$(this).css("background-color", "rgba(255,255,255,0.2");
+			$("#height" + index).css({"background": "rgba(0,0,0,0)"});
 		}
 		else if (team2 == team && year2==year) {
 			team2 = null;
 			flick = false;
 			$("#team2").empty();
-			$("#team2").append("<div class='compare-default'>Select a team to compare</div>");
+			$("#team2").append("<div class='compare-default'>Select a team to compare</div>");			
 
-			$("#shadow2").remove();
+			oldTeam2 = null;
+			oldIndex2 = null;
+			$(this).css("background-color", "rgba(255,255,255,0.2");
+			$("#height" + index).css({"background": "rgba(0,0,0,0)"});
 		}
 		else if (team1 == null) {
 			team1 = team;
 			year1=year;
 			flick = true;			
 			$("#team1").empty();
-			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");
-
-			$(this).css({
-				"-moz-box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)",
- 				"-webkit-box-shadow": "5px 10px 5px 0px rgba(0,0,0,0.5)",
- 				"box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)"
-			});						
+			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");				
+			
+			oldTeam1 = $(this).attr("id");
+			oldIndex1 = index;
+			$(this).css("background-color", "rgba(0,255,102,0.5)");
+			$("#height" + index).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
 		}		
 		else if (team2 == null) {
 			team2 = team;
@@ -81,40 +90,47 @@ $(document).ready(function(){
 			flick = false;
 			$("#team2").empty();
 			$("#team2").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");
-
-			$(this).css({
-				"-moz-box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)",
- 				"-webkit-box-shadow": "5px 10px 5px 0px rgba(0,0,0,0.5)",
- 				"box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)"
-			});
+		
+			oldTeam2 = $(this).attr("id");
+			oldIndex2 = index;
+			$(this).css("background-color", "rgba(0,255,102,0.5)");
+			$("#height" + index).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
 		}		
 		else  if (flick == false){
 			team1 = team;
+
+			if(year1==year) {
+				$("#" + oldTeam1).css("background-color", "rgba(255,255,255,0.2");
+				$("#height" + oldIndex1).css({"background": "rgba(0,0,0,0)"});
+			}
+
 			year1=year;
 			flick = true;			
 			$("#team1").empty();
 			$("#team1").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");
-
-			$("#shadow1").remove();
-			$(this).css({
-				"-moz-box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)",
- 				"-webkit-box-shadow": "5px 10px 5px 0px rgba(0,0,0,0.5)",
- 				"box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)"
-			});
+		
+			oldTeam1 = $(this).attr("id");
+			oldIndex1 = index;
+			$(this).css("background-color", "rgba(0,255,102,0.5)");
+			$("#height" + index).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
 		}
 		else {
 			team2 = team;
+
+			if(year2==year) {
+				$("#" + oldTeam2).css("background-color", "rgba(255,255,255,0.2");
+				$("#height" + oldIndex2).css({"background": "rgba(0,0,0,0)"});
+			}
+
 			year2=year;
 			flick = false;
 			$("#team2").empty();
-			$("#team2").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");
+			$("#team2").append("<div class='team-box' style='background-color: #404040;'><div class='col-sm-60 no-padding' style='max-height: 20%'><b class='team-header'>" + team + "</b><font style='font-size: 2em; position: absolute; right: 0px;'>" + year + "</font></div><div class='col-sm-20 no-padding' style='padding-top: 5px; height: 80%; display: flex; align-items: center;'><div class='circle big cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40 no-padding' style='height: 25%;'><br><div class='col-sm-15 team-medium-box'>Networth: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.netWorth + "</div></div><div class='col-sm-25 team-medium-box'>Points: </div><div class='col-sm-10'><div class='team-medium-left'>" + jsonTeam.pts + "</div></div></div><div class='col-sm-40 no-padding' style='height: 40%;'><div class='col-sm-15 team-small-box'>Won:<br />Lost:<br />Drew:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-25 team-small-box'>Goals for:<br />Goals against:<br />Goal Difference:</div><div class='col-sm-10 full-height team-smaller-box' id='small-box-values-2'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div><div id='formBox' class='col-sm-40 no-padding' style='height: 15%'><div class='col-sm-8 no-padding' style='font-size: 1.5em'>Form: </div><div class='col-sm-8 form-box " + formColors[0] + "'></div><div class='col-sm-8 form-box " + formColors[1] + "''></div><div class='col-sm-8 form-box " + formColors[2] + "'></div><div class='col-sm-8 form-box " + formColors[3] + "'></div><div class='col-sm-8 form-box " + formColors[4] + "'></div><div class='col-sm-8 form-box " + formColors[5] + "'></div></div></div>");		
 		
-			$("#shadow2").remove();
-			$(this).css({
-				"-moz-box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)",
- 				"-webkit-box-shadow": "5px 10px 5px 0px rgba(0,0,0,0.5)",
- 				"box-shadow": "5px 5px 5px 0px rgba(0,0,0,0.5)"
-			});
+			oldTeam2 = $(this).attr("id");
+			oldIndex2 = index;
+			$(this).css("background-color", "rgba(0,255,102,0.5)");
+			$("#height" + index).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
 		}
 
     	$('body').animate({
@@ -130,7 +146,7 @@ $(document).ready(function(){
 		var percentLeft = $(this).offset().left/$(window).width() * 100;
 		var percentTop = ($(this).offset().top-$(window).scrollTop())/$(window).height() * 100;		
 
-       	var hoverBox = $('body').append("<div id='teamTooltip' class='hover-box'><div class='col-sm-60' style='font-size: 2em; height: 20%; margin: 0%;'>" + team + "</div><div class='col-sm-20' style='height: 80%; display: flex; align-items: center;'><div class='circle medium cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40' style='background-color: rgba(44,44,44,0.5); background-clip: content-box; padding-bottom: 3%; padding-top: 3%; height: 80%'><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>Win:<br />Loss:<br />Draw:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>G/F:<br />G/A:<br />GD:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");		
+       	var hoverBox = $('body').append("<div id='teamTooltip' class='hover-box'><div class='col-sm-60' style='font-size: 2em; height: 20%; margin: 0%;'>" +team + "</div><div class='col-sm-20' style='height: 80%; top: 10px;'><div class='circle medium cover " + team.toLowerCase().replace(/ /g, "-") + "'></div></div><div class='col-sm-40' style='background-color: rgba(44,44,44,0.5); background-clip: content-box; height: 15%; padding-bottom: 0; font-size: 1.5em; margin: 0%;'>&nbsp;&nbsp;Networth: </text><font color=red>£" + jsonTeam.netWorth + " million </font></div><div class='col-sm-40' style='background-color: rgba(44,44,44,0.5); background-clip: content-box; padding-bottom: 3%; padding-top: 1%; height: 65%'><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>Win:<br />Loss:<br />Draw:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.w + "<br />" + jsonTeam.l + "<br />" + jsonTeam.d + "</div><div class='col-sm-15 fullheight' style='text-align: right; font-size: 1.5em;'>G/F:<br />G/A:<br />GD:</div><div class='col-sm-15 fullheight' style='color: red; font-size: 1.5em;'>" + jsonTeam.gf + "<br />" + jsonTeam.ga + "<br />" + jsonTeam.gd + "</div></div></div>");		
 		
 	    if(percentLeft <= 50 && percentTop <= 50) {
 	    	$('#teamTooltip').css({	    	
@@ -213,7 +229,7 @@ $(document).ready(function(){
 
 	//Year changed
 	$('#scrollbar').on("input", function() {
-		year = $(this).val()    	
+		year = $(this).val();		
     	var lbl = $(".sliderLabel").text(year);
     	var leftPx = (year-1995)/(2016-1995)*(this.clientWidth);
     	lbl.css({ left: leftPx });
@@ -223,6 +239,22 @@ $(document).ready(function(){
     	maxWorth = leagueData[flip].maxWorth;
         maxWLD = leagueData[flip].maxWLD;
         addClubs();
+
+        if (year1==year) {
+			$("#" + oldTeam1).css("background-color", "rgba(0,255,102,0.5)");
+			$("#height" + oldIndex1).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0))"});			
+		} 
+		else {
+			$("#height" + oldIndex1).css({"background": "rgba(0,0,0,0)"});			
+		}
+		if(year2 == year) {
+			$("#" + oldTeam2).css("background-color", "rgba(0,255,102,0.5)");
+				$("#height" + oldIndex2).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
+		}
+		else {
+			$("#height" + oldIndex2).css({"background": "rgba(0,0,0,0)"});	
+		}
+
         if (view == 1){
         	$("#wld").trigger("change");
         }

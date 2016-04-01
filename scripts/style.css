@@ -76,8 +76,8 @@ div[class^='halo'],div[class*=' halo']:hover{
   position: absolute;
 }
 .medium {
-  width: 70px;
-  height: 70px;  
+  width: 105px;
+  height: 105px;  
 }
 .big {
   width: 200px;
@@ -153,9 +153,9 @@ div[class^='halo'],div[class*=' halo']:hover{
 }
 .hover-box {
   position: absolute;
-  height: 150px;
+  height: 180px;
   width: 400px;
-  background-color: rgba(64,64,64,0.8);
+  background-color: rgba(90,90,90,0.9);
 }
 .form-hover-box {
   position: absolute;  
@@ -187,11 +187,32 @@ div[class^='halo'],div[class*=' halo']:hover{
   border: 2px solid #404040;
 }
 .green {
-  background-color: rgba(0,255,0,0.5);
+  background-color: rgba(0,255,0,0.4);
 }
 .white {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.4);
 }
 .red {
-  background-color: rgba(255,0,0,0.5);
+  background-color: rgba(255,0,0,0.4);
+}
+.wins-bar {
+  width: 10%;
+  background-color: rgba(0,127,255,0.7);
+  position: absolute;
+  left: 20%;
+  bottom: 50px;
+}
+.draws-bar {
+  width: 10%;
+  background-color: rgba(255,255,255,0.7);
+  position: absolute;
+  left: 45%;
+  bottom: 58px;
+}
+.losses-bar {
+  width: 10%;
+  background-color: rgba(255,91,0,0.5);
+  position: absolute;
+  left: 70%;
+  bottom: 50px;
 }

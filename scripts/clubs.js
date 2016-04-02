@@ -27,6 +27,7 @@ $(document).ready(function(){
 	var team2 = null;
 	var year1;
 	var year2;
+	var firstTime = true;
 	var flick = false;
 
 	// ADD team to compare box on click
@@ -133,9 +134,12 @@ $(document).ready(function(){
 			$("#height" + index).css({"background": "linear-gradient(rgba(255,255,0,0.4), rgba(255,255,102,0)"});
 		}
 
-    	$('body').animate({
-        	scrollTop: $("#team1").offset().top
-    	}, 500);
+		if (firstTime) {
+			firstTime = false;
+			$('body').animate({
+	        	scrollTop: $("#team1").offset().top
+	    	}, 500);
+		}    	
 
 	});
 

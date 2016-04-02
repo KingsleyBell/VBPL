@@ -82,7 +82,6 @@ div[class^='halo'],div[class*=' halo']:hover{
 .big {
   width: 200px;
   height: 200px;
-  border: 2px solid rgba(200,200,200,0.5);
 }
 .halo-green{
   width: 60px;
@@ -155,7 +154,7 @@ div[class^='halo'],div[class*=' halo']:hover{
   position: absolute;
   height: 180px;
   width: 400px;
-  background-color: rgba(90,90,90,0.9);
+  background-color: rgba(66,66,66,0.8);
 }
 .form-hover-box {
   position: absolute;  
